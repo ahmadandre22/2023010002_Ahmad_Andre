@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Logika Infomatika</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: grey;
+        }
+
+        h1 {
+            text-align : center;
+            color :greenyellow;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: greenyellow;
+            margin-bottom: 5px;
+            width: 20%;
+           
+
+        }
+
+        input {
+            width: 20%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 10%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .sukses {
+            color: greenyellow;
+            font-style: italic;
+            font-size: 14px;
+            
+        }
+
+        .gagal {
+            color: red;
+            font-style: italic;
+            font-size: 14px;
+           
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1>Cek Syarat Mengajukan Pinjaman</h1>
+
+<form id = "formPinjam">
+    <label> Umur : </label>
+    <input type = "number" id="umur" required>
+    
+    <label> Pendapatan Bulanan (Rp) :</label>
+    <input type = "number" id="pendapatan" required>
+
+    <button type="button" onclick="cekSyarat()">Cek</button > 
+   
+</form>
+
+<h4 align = "center"id= "hasil"></h4>
+
+<h6 align = "center ">Copyright by : Ahmad Andre</h6>
+
+<script>
+    function cekSyarat() {
+        // Input
+        let usia = document.getElementById("umur").value;
+        let penghasilan = document.getElementById("pendapatan").value;
+
+        // Element untuk menampilkan hasil
+        let hasil = document.getElementById("hasil");
+
+        // Cek Syarat
+        if (usia >= 21 && penghasilan >= 3000000) { // && = Operator dan (and). Logika akan menghasilkan nilai true apabila semua kondisi terpenuhi (bernilai true)
+                hasil.className = "sukses";
+                hasil.innerHTML = "Selamat! Anda memenuhi syarat untuk pengajuan pinjaman.";
+            } else {
+                hasil.className = "gagal";
+                hasil.innerHTML = "Maaf, Anda belum memenuhi syarat untuk pengajuan pinjaman.";
+            }
+
+    }
+
+  </script> 
+</body>
+</html>
+</script>
+</body>
+</html>
